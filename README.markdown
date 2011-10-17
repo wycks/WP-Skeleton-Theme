@@ -14,13 +14,15 @@ This is a very minimal Bare Bones Responsive WordPress theme based on getskeleto
 * Icon support for mobile and web
 * IE HTML5shim support
 
--------------------------------
 
-- ### Default 4 layouts:
+
+### Default 4 layouts:
 - Base 960 Grid       960px
 - Tablet (Portrait)   768px
 - Mobile (Portrait)   320px
 - Mobile (Landscape)  480px
+
+-------------------------------
 
 ### What's is included:
 
@@ -37,6 +39,8 @@ Some basic template tags for Site Title, Tagline, Post Meta.
 An additional Folder Called "Snippets" you can comment in/out that is pre-filled with ton of default WordPress features.
  
 This is called in the functions.php and is commented out by default.( in add-stuff.php and remove-stuff.php) )
+
+-------------------------------
 
 ### What it does not have:
 
