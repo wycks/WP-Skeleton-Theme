@@ -1,0 +1,160 @@
+<?php 
+/**
+ * @package WordPress
+ * @subpackage Toolbox
+ */
+
+
+// REMOVE SOME HEADER OUTPUT
+function remove_header_info() {
+    remove_action('wp_head', 'rsd_link');
+    remove_action('wp_head', 'wlwmanifest_link');
+    remove_action('wp_head', 'wp_generator');
+    remove_action('wp_head', 'start_post_rel_link');
+    remove_action('wp_head', 'index_rel_link');
+    remove_action('wp_head', 'adjacent_posts_rel_link');
+}
+add_action('init', 'remove_header_info');
+
+//-----------------------------------------
+
+
+// REMOVE THE WORDPRESS UPDATE NOTIFICATION FOR ALL USERS EXCEPT SYSADMIN
+       global $user_login;
+       get_currentuserinfo();
+       if (!current_user_can('update_plugins')) { // checks to see if current user can update plugins 
+        add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
+        add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
+       }
+       
+ //-----------------------------------------
+       
+
+// REMOVE META BOXES FROM DEFAULT POSTS SCREEN
+   function remove_default_post_screen_metaboxes() {
+ remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
+ remove_meta_box( 'postexcerpt','post','normal' ); // Excerpt Metabox
+ remove_meta_box( 'commentstatusdiv','post','normal' ); // Comments Metabox
+ remove_meta_box( 'trackbacksdiv','post','normal' ); // Talkback Metabox
+ remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
+ remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
+ }
+   add_action('admin_menu','remove_default_post_screen_metaboxes');
+   
+ //-----------------------------------------  
+
+
+// REMOVE META BOXES FROM DEFAULT PAGES SCREEN
+   function remove_default_page_screen_metaboxes() {
+ remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
+ remove_meta_box( 'postexcerpt','post','normal' ); // Excerpt Metabox
+ remove_meta_box( 'commentstatusdiv','post','normal' ); // Comments Metabox
+ remove_meta_box( 'trackbacksdiv','post','normal' ); // Talkback Metabox
+ remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
+ remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
+ }
+   add_action('admin_menu','remove_default_page_screen_metaboxes');
+   
+ //-----------------------------------------
+   
+   
+// REMOVE DASHBOARD WIDGETS  
+   function remove_dashboard_widgets() {
+	global $wp_meta_boxes;
+
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+
+}
+
+if (!current_user_can('manage_options')) {
+	add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+}
+
+
+ //-----------------------------------------
+
+
+// DISABLE DEFAULT WIDGETS
+function unregister_default_wp_widgets() {
+    unregister_widget('WP_Widget_Pages');
+    unregister_widget('WP_Widget_Calendar');
+    unregister_widget('WP_Widget_Archives');
+    unregister_widget('WP_Widget_Links');
+    unregister_widget('WP_Widget_Meta');
+    unregister_widget('WP_Widget_Search');
+    unregister_widget('WP_Widget_Text');
+    unregister_widget('WP_Widget_Categories');
+    unregister_widget('WP_Widget_Recent_Posts');
+    unregister_widget('WP_Widget_Recent_Comments');
+    unregister_widget('WP_Widget_RSS');
+    unregister_widget('WP_Widget_Tag_Cloud');
+}
+add_action('widgets_init', 'unregister_default_wp_widgets', 1);
+
+
+ //-----------------------------------------
+
+
+// REMOVE MENU ITEMS (can be based on user role) this is only visual! users can still go to the url
+
+add_action( 'admin_menu', 'wpse26980_remove_tools', 99 );
+function wpse26980_remove_tools(){
+    
+    remove_menu_page( 'index.php' );                     //dashboard
+    remove_menu_page( 'edit.php' );                      //posts
+    remove_menu_page( 'upload.php' );                    //media
+    remove_menu_page( 'link-manager.php.php' );          //links
+    remove_menu_page( 'edit.php?post_type=page' );       //page
+    remove_menu_page( 'edit-comments.php' );             //comments
+    remove_menu_page( 'themes.php' );                    //appearance
+    remove_menu_page( 'plugins.php' );                   //plugins
+    remove_menu_page( 'users.php' );                     //users
+    remove_menu_page( 'tools.php' );                     //tools
+    remove_menu_page( 'options-general.php' );           //settings
+    
+}
+
+// remove sub-menu items only (fill in the rest)
+function my_remove_menu_elements()
+    {
+        remove_submenu_page( 'plugins.php', 'plugin-editor.php' );  //plugin editor
+    }
+    add_action('admin_init', 'my_remove_menu_elements');
+
+
+
+ //-----------------------------------------
+
+
+
+// DISABLE RSS FEEDS
+function fb_disable_feed() {
+wp_die( __('No feed available,please visit our <a href="'. get_bloginfo('url') .'">homepage</a>!') );
+}
+
+add_action('do_feed', 'fb_disable_feed', 1);
+add_action('do_feed_rdf', 'fb_disable_feed', 1);
+add_action('do_feed_rss', 'fb_disable_feed', 1);
+add_action('do_feed_rss2', 'fb_disable_feed', 1);
+add_action('do_feed_atom', 'fb_disable_feed', 1);
+
+ //-----------------------------------------
+   
+
+// REMOVE VERSION OUTPUT
+function complete_version_removal() {
+    return '';
+}
+add_filter('the_generator', 'complete_version_removal');
+
+
+
+
+?>
