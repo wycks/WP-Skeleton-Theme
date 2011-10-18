@@ -46,3 +46,9 @@ This is called in the functions.php and is commented out by default.( in add-stu
 
 *Search , Archives, Category, Single, Image, Tag* --> templates.  
 Everything is handled by the main loop
+
+
+I also stripped out all the JavaScript that came with the original HTML Skeleton Framework and overall tried to make it as minimal as possible.
+
+
+### Open to any feature requests 
