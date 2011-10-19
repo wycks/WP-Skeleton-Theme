@@ -6,7 +6,7 @@
 
 
 // REMOVE SOME HEADER OUTPUT
-function remove_header_info() {
+function Wps_remove_header_info() {
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wlwmanifest_link');
     remove_action('wp_head', 'wp_generator');
@@ -14,7 +14,7 @@ function remove_header_info() {
     remove_action('wp_head', 'index_rel_link');
     remove_action('wp_head', 'adjacent_posts_rel_link');
 }
-add_action('init', 'remove_header_info');
+add_action('init', 'Wps_remove_header_info');
 
 //-----------------------------------------
 
@@ -31,7 +31,7 @@ add_action('init', 'remove_header_info');
        
 
 // REMOVE META BOXES FROM DEFAULT POSTS SCREEN
-   function remove_default_post_screen_metaboxes() {
+   function Wps_remove_default_post_metaboxes() {
  remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
  remove_meta_box( 'postexcerpt','post','normal' ); // Excerpt Metabox
  remove_meta_box( 'commentstatusdiv','post','normal' ); // Comments Metabox
@@ -39,13 +39,13 @@ add_action('init', 'remove_header_info');
  remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
  remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
  }
-   add_action('admin_menu','remove_default_post_screen_metaboxes');
+   add_action('admin_menu','Wps_remove_default_post_metaboxes');
    
  //-----------------------------------------  
 
 
 // REMOVE META BOXES FROM DEFAULT PAGES SCREEN
-   function remove_default_page_screen_metaboxes() {
+   function Wps_remove_default_page_metaboxes() {
  remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
  remove_meta_box( 'postexcerpt','post','normal' ); // Excerpt Metabox
  remove_meta_box( 'commentstatusdiv','post','normal' ); // Comments Metabox
@@ -53,13 +53,13 @@ add_action('init', 'remove_header_info');
  remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
  remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
  }
-   add_action('admin_menu','remove_default_page_screen_metaboxes');
+   add_action('admin_menu','Wps_remove_default_page_metaboxes');
    
  //-----------------------------------------
    
    
 // REMOVE DASHBOARD WIDGETS  
-   function remove_dashboard_widgets() {
+   function Wps_remove_dashboard_widgets() {
 	global $wp_meta_boxes;
 
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
@@ -74,7 +74,7 @@ add_action('init', 'remove_header_info');
 }
 
 if (!current_user_can('manage_options')) {
-	add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+	add_action('wp_dashboard_setup', 'Wps_remove_dashboard_widgets' );
 }
 
 
@@ -82,7 +82,7 @@ if (!current_user_can('manage_options')) {
 
 
 // DISABLE DEFAULT WIDGETS
-function unregister_default_wp_widgets() {
+function Wps_unregister_default_widgets() {
     unregister_widget('WP_Widget_Pages');
     unregister_widget('WP_Widget_Calendar');
     unregister_widget('WP_Widget_Archives');
@@ -96,7 +96,7 @@ function unregister_default_wp_widgets() {
     unregister_widget('WP_Widget_RSS');
     unregister_widget('WP_Widget_Tag_Cloud');
 }
-add_action('widgets_init', 'unregister_default_wp_widgets', 1);
+add_action('widgets_init', 'Wps_unregister_default_widgets', 1);
 
 
  //-----------------------------------------
@@ -104,8 +104,8 @@ add_action('widgets_init', 'unregister_default_wp_widgets', 1);
 
 // REMOVE MENU ITEMS (can be based on user role) this is only visual! users can still go to the url
 
-add_action( 'admin_menu', 'wpse26980_remove_tools', 99 );
-function wpse26980_remove_tools(){
+add_action( 'admin_menu', 'Wps_remove_tools', 99 );
+function Wps_remove_tools(){
     
     remove_menu_page( 'index.php' );                     //dashboard
     remove_menu_page( 'edit.php' );                      //posts
@@ -122,11 +122,11 @@ function wpse26980_remove_tools(){
 }
 
 // remove sub-menu items only (fill in the rest)
-function my_remove_menu_elements()
+function Wps_remove_menu_elements()
     {
         remove_submenu_page( 'plugins.php', 'plugin-editor.php' );  //plugin editor
     }
-    add_action('admin_init', 'my_remove_menu_elements');
+    add_action('admin_init', 'Wps_remove_menu_elements');
 
 
 
