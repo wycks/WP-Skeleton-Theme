@@ -1,13 +1,13 @@
 <?php 
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage WP-Skeleton
  */
 
 // LOAD JQUERY FROM CDN
-add_action( 'init', 'jquery_register' );
+add_action( 'init', 'Wps_jquery_register' );
 
-function jquery_register() {
+function Wps_jquery_register() {
 
 if ( !is_admin() ) {
 
@@ -21,7 +21,7 @@ if ( !is_admin() ) {
  //-----------------------------------------
 
 // CUSTOMIZE ADMIN MENU ORDER
-   function custom_menu_order($menu_ord) {
+   function Wps_custom_menu_order($menu_ord) {
        if (!$menu_ord) return true;
        return array(
         'index.php', // this represents the dashboard link
@@ -36,8 +36,8 @@ if ( !is_admin() ) {
         'edit.php', // this is the default POST admin menu 
     );
    }
-   add_filter('custom_menu_order', 'custom_menu_order');
-   add_filter('menu_order', 'custom_menu_order');
+   add_filter('custom_menu_order', 'Wps_custom_menu_order');
+   add_filter('menu_order', 'Wps_custom_menu_order');
 
     //-----------------------------------------
    
