@@ -46,4 +46,26 @@ add_filter('widget_text', 'do_shortcode');
 //require_once( get_template_directory() . '/snippets/add-stuff.php' );
 
 
+        
+        add_filter('gettext', 'remove_admin_stuff', 20, 3);
+
+
+/**
+ * Remove the text at the bottom of the Custom fields box in WordPress Post/Page Editor.
+ *
+ * @link http://codex.wordpress.org/Plugin_API/Filter_Reference/gettext
+ */
+function remove_admin_stuff( $translated_text, $untranslated_text, $domain ) {
+
+    $custom_field_text = 'You are using <span class="b">WordPress %s</span>.';
+
+    if ( is_admin() && $untranslated_text === $custom_field_text ) {
+        return '';
+    }
+
+    return $translated_text;
+}
+        
+
+
 ?>
