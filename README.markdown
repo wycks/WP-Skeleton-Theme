@@ -3,6 +3,7 @@
 
 This is a very minimal Bare Bones Responsive WordPress theme based on getskeleton.com
 
+I have added a demo: http://skeleton.phpfogapp.com/
 
 ### Features:
 
