@@ -110,7 +110,7 @@ function Wps_remove_tools(){
     remove_menu_page( 'index.php' );                     //dashboard
     remove_menu_page( 'edit.php' );                      //posts
     remove_menu_page( 'upload.php' );                    //media
-    remove_menu_page( 'link-manager.php.php' );          //links
+    remove_menu_page( 'link-manager.php' );          //links
     remove_menu_page( 'edit.php?post_type=page' );       //page
     remove_menu_page( 'edit-comments.php' );             //comments
     remove_menu_page( 'themes.php' );                    //appearance
