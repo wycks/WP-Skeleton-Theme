@@ -15,7 +15,7 @@
          </div>
      </div> 
     
-     <div class="eight columns"> 
+     <div class="nine columns"> 
          <div class="menu"> <!--  the Menu -->
           <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
          </div>
