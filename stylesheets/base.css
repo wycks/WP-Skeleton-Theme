@@ -181,7 +181,7 @@
 		font-size: 13px;
 		color: #444; }
         
-/* #Menu + Logo
+/* #Menu & Logo
 ================================================== */        
         .header {
          height:85px;
@@ -209,36 +209,37 @@
            font-size: 16px;
         }
         
-        .logo{
-            margin-left: -10px;
-        }
-
         .logo a{
             text-decoration: none;
         }
 
 /* #Misc
 ================================================== */
-.title{
-    padding-bottom: 15px;
-}	
+        .title{
+            padding-bottom: 15px;
+        }	
         
+        .full-width{
+            padding-left: 10px;
+        } 
         
-        /* #Sidebar
+ /* #Sidebar
 ================================================== */
         .sidebar{
             font: 14px/1.5em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }       
+            margin-right:-5px;
+                }   
+                
         .sidebar li{
             list-style: none;
         }
         
-                /* #Footer
+ /* #Footer
 ================================================== */
 
-                .footer li{
-                    list-style: none;
-                    padding-right: 15px;
-                    float: left;
-                    width: 220px;
-                }
+        .footer li{
+            list-style: none;
+            padding-right: 15px;
+            float: left;
+            width: 220px;
+        }

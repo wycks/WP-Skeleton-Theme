@@ -26,7 +26,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 ================================================== */
 
     .container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
-    .column, .columns                           { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+    .column, .columns                           { float: left; display: inline;}
     .row                                        { margin-bottom: 20px; }
 
     /* Nested Column Classes */
@@ -72,6 +72,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
     .container .offset-by-fifteen               { padding-left: 900px; }
 
 
+        /* wordpress sidebar*/
+        .one-third.column{
+          margin-left: 40px;
+        }
+        
+        /* wordpress menu*/
+        .header .seven.columns {margin-right: 30px;}
 
 /* #Tablet (Portrait)
 ================================================== */
@@ -80,8 +87,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
     @media only screen and (min-width: 768px) and (max-width: 959px) {
         .container                                  { width: 768px; }
-        .container .column,
-        .container .columns                         { margin-left: 10px; margin-right: 10px;  }
+       
         .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
         .column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
 
@@ -121,8 +127,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .offset-by-thirteen              { padding-left: 624px; }
         .container .offset-by-fourteen              { padding-left: 672px; }
         .container .offset-by-fifteen               { padding-left: 720px; }
+        
+        /* wordpress sidebar*/
+        .one-third.column{
+        margin-left: 20px;
+        margin-right: -10px;
+        }
     }
 
+    
+    
 
 /*  #Mobile (Portrait)
 ================================================== */
@@ -169,10 +183,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .offset-by-fourteen,
         .container .offset-by-fifteen { padding-left: 0; }
         
-       /* Float menu left now*/
+       /* Float wordpress menu left now*/
        
        .menu ul {float:left;}
-
+ 
+        /* wordpress sidebar*/
+       .one-third.column{margin-left: 0px;}
     }
 
 
@@ -204,10 +220,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .one-third.column,
         .container .two-thirds.column { width: 420px; }
         
-        /* Float menu left now*/
+        /* Float wordpress menu left now*/
        
        .menu ul {float:left;}
-    }
+       
+        /* wordpress sidebar*/
+       .one-third.column{margin-left: 0px;}
+       
+      }
 
 
 /* #Clearing

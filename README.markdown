@@ -33,7 +33,7 @@ I have added a demo: http://skeleton.phpfogapp.com/
 *Widget Support*
  - By default it has a widgitized sidebar and footer.
 
-*Comment, Full Width Page, Author, 404* --> Templates
+*Comment, Full Width Page, Author, Search, 404* --> Templates
 
 Some basic template tags for Site Title, Tagline, Post Meta.
 
@@ -45,12 +45,20 @@ This is called in the functions.php and is commented out by default.( in add-stu
 
 ### What it does not have:
 
-*Search , Archives, Category, Single, Image, Tag* --> templates.  
-Everything is handled by the main loop
+Image template or any real image CSS - This is best left outside a framework
 
+Support for `the_excerpt` , by default you must use the "Read More" to split posts in the main loop.
 
-I also stripped out all the JavaScript that came with the original HTML Skeleton Framework and overall tried to make it as minimal as possible.
+Support for `tag` output in the main loop, I never use tags and they can add to db overhead.
 
+Some pages are just handled by the main loop, such as single.php, archives , category, tags, etc.
+
+### Notes
+Stripped out the JavaScript tabs that came with the original HTML Skeleton Framework.
+The CSS for those elements is still present but it is best to `wp_enqueue` the javascript using native WP functions.
+The footer is left completely unstyled, up to you which grids you want to use, supports 1, 2, 3 or 4 columns easily.
+
+To have a left sidebar just move `get_template_part( 'sidebar', 'index' );` to above the loop call (might need minor tweaks)
 
 -------------------------------
 ### Open to any feature requests 

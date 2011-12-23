@@ -7,8 +7,10 @@
  * @subpackage WP-Skeleton
  */
 
-get_header(); ?>
+get_header(); 
+get_template_part( 'menu', 'index' ); //the  menu + logo/site title ?>
 
+               <div class="sixteen columns  ">
 		<div id="primary" class="full-width">
 			<div id="content">
 
@@ -30,5 +32,7 @@ get_header(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->
+              </div>
+                
 
 <?php get_footer(); ?>

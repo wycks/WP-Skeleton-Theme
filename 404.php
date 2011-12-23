@@ -41,6 +41,5 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title ?>
 	</div><!-- #primary -->
         
 
-<?php 
-      get_template_part( 'sidebar', 'index' ); //the Sidebar 
-      get_footer(); ?>
+<?php get_template_part( 'sidebar', 'index' ); //the Sidebar ?>
+<?php get_footer(); ?>

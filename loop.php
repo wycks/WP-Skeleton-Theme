@@ -21,9 +21,10 @@
              <!--The Meta, Author, Date, Categories and Comments-->   
              <div class="meta"> 
                     Date posted: <?php echo get_the_date(); ?>
-                  | Author: <?php echo get_the_author();  ?>
+                  | Author: <?php the_author_posts_link(); ?>
                   | <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
                   <p>Categories: <?php the_category(' '); ?></p>
+                  
              </div>
            
           </article>

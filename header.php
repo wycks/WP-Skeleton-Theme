@@ -48,4 +48,4 @@
 
  <div class="container">
     
- <?php get_template_part( 'menu', 'index' ); // get the blog header( menu + logo/site title) ?>
+ 
