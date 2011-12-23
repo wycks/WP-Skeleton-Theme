@@ -186,13 +186,14 @@
         .header {
          height:85px;
          border-bottom:  1px solid #ddd;
-         margin-bottom: 30px;
+         margin-bottom: 40px;
          clear: both;
          margin-top: 40px;
         }
 
         .menu {
         padding-top:22px;
+        margin-right: -10px;
 
         }
 
@@ -206,6 +207,10 @@
            list-style-type: none;
            padding-right: 12px;
            font-size: 16px;
+        }
+        
+        .logo{
+            margin-left: -10px;
         }
 
         .logo a{
