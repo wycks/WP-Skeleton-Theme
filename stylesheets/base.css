@@ -59,8 +59,6 @@
 		background: #fff;
 		font: 16px/1.5em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #444;
-		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-		-webkit-text-size-adjust: 100%;
  }
 
 
@@ -71,10 +69,10 @@
 		font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
 		font-weight: normal; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
-	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
-	h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
-	h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+	h1 { font-size: 46px; line-height: 50px; }
+	h2 { font-size: 35px; line-height: 40px; }
+	h3 { font-size: 28px; line-height: 34px; }
+	h4 { font-size: 21px; line-height: 30px; }
 	h5 { font-size: 17px; line-height: 24px; }
 	h6 { font-size: 14px; line-height: 21px; }
 	.subheader { color: #777; }
@@ -216,9 +214,9 @@
 
 /* #Misc
 ================================================== */
-	.remove-bottom { margin-bottom: 0 !important; }
-	.half-bottom { margin-bottom: 10px !important; }
-	.add-bottom { margin-bottom: 20px !important; }
+.title{
+    padding-bottom: 15px;
+}	
         
         
         /* #Sidebar

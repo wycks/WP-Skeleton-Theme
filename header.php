@@ -4,7 +4,9 @@
  * @subpackage WP-Skeleton
  */
 ?>
-
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>> 
+    
 <head>
 
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -12,8 +14,8 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-
+<!--[if gte IE 9 ]><html class="no-js ie9" lang="en"> <![endif]-->
+    
         <title><?php wp_title('|',true,'right'); ?><?php bloginfo('name'); ?></title>
         
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
@@ -44,6 +46,6 @@
 
 <body <?php body_class(); ?>><!-- the Body  -->
 
-<div class="container">
+ <div class="container">
     
-<?php get_template_part( 'menu', 'index' ); // get the blog header( menu + logo/site title) ?>
+ <?php get_template_part( 'menu', 'index' ); // get the blog header( menu + logo/site title) ?>

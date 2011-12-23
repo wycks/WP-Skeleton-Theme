@@ -5,22 +5,24 @@
  */
 ?>
 
-<div class="content">
-      <div class="two-thirds column">
-      <div class="main"> 
+   <div class="content">
+     <div class="two-thirds column">
+       <div class="main"> 
                         
         <?php while ( have_posts() ) : the_post(); ?> <!--  the Loop -->
                         
-          <article id="post-<?php the_ID(); ?>">
-                        
+         <article id="post-<?php the_ID(); ?>">
+           <div class="title">            
              <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title('<h3>', '</h3>'); ?></a>  <!--Post titles-->
-           
-             <p><?php the_content("Continue reading " . the_title('', '', false)); ?></p> <!--The Content-->
+           </div>
+             
+             <?php the_content("Continue reading " . the_title('', '', false)); ?> <!--The Content-->
 	 
-             <div class="meta"> <!--The Meta, Author, Date, Categories and Comments-->                                                             
+             <!--The Meta, Author, Date, Categories and Comments-->   
+             <div class="meta"> 
                     Date posted: <?php echo get_the_date(); ?>
                   | Author: <?php echo get_the_author();  ?>
-                  |  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+                  | <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
                   <p>Categories: <?php the_category(' '); ?></p>
              </div>
            
@@ -45,9 +47,9 @@
         <?php if(is_page() || is_single()) :
               
            comments_template( '', true );
-          
          endif; ?>
-     </div>  <!-- End Main -->
-    </div>  <!-- End two-thirds column -->
+     
+        </div>  <!-- End Main -->
+     </div>  <!-- End two-thirds column -->
+   </div><!-- End Content -->
     
-</div><!-- End Content -->
