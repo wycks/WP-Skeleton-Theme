@@ -55,10 +55,13 @@ Some pages are just handled by the main loop, such as single.php, archives , cat
 
 ### Notes
 Stripped out the JavaScript tabs that came with the original HTML Skeleton Framework.
-The CSS for those elements is still present but it is best to `wp_enqueue` the javascript using native WP functions.
+The CSS for those elements is still present but it is best to `wp_enqueue` the javascript using native WP functions.  
+
 The footer is left completely unstyled, up to you which grids you want to use, supports 1, 2, 3 or 4 columns easily.
 
-To have a left sidebar just move `get_template_part( 'sidebar', 'index' );` to above the loop call (might need minor tweaks)
+To have a left sidebar just move `get_template_part( 'sidebar', 'index' );` to above the loop call (might need minor tweaks).  
+
+More grid layout and examples on http://www.getskeleton.com/
 
 -------------------------------
 ### Open to any feature requests 
