@@ -72,13 +72,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
     .container .offset-by-fifteen               { padding-left: 900px; }
 
 
-        /* wordpress sidebar*/
+        /* WordPress sidebar*/
         .one-third.column{
           margin-left: 40px;
         }
         
-        /* wordpress menu*/
-        .header .seven.columns {margin-right: 30px;}
+        /* WordPress menu*/
+        .header .seven.columns {margin-right: 40px;}
 
 /* #Tablet (Portrait)
 ================================================== */
@@ -128,10 +128,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .offset-by-fourteen              { padding-left: 672px; }
         .container .offset-by-fifteen               { padding-left: 720px; }
         
-        /* wordpress sidebar*/
+        /* WordPress sidebar*/
         .one-third.column{
         margin-left: 20px;
-        margin-right: -10px;
         }
     }
 
@@ -183,11 +182,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .offset-by-fourteen,
         .container .offset-by-fifteen { padding-left: 0; }
         
-       /* Float wordpress menu left now*/
-       
+       /* Float WordPress menu left now, and reduce padding*/
        .menu ul {float:left;}
+       .menu {padding-top: 20px;}
  
-        /* wordpress sidebar*/
+        /* WordPress sidebar*/
        .one-third.column{margin-left: 0px;}
     }
 
@@ -220,11 +219,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .one-third.column,
         .container .two-thirds.column { width: 420px; }
         
-        /* Float wordpress menu left now*/
+        /* Float WordPress menu left now and reduce padding*/
        
        .menu ul {float:left;}
+       .menu {padding-top: 20px;}
        
-        /* wordpress sidebar*/
+        /* WordPress sidebar*/
        .one-third.column{margin-left: 0px;}
        
       }

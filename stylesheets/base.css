@@ -183,63 +183,58 @@
         
 /* #Menu & Logo
 ================================================== */        
-        .header {
-         height:85px;
-         border-bottom:  1px solid #ddd;
-         margin-bottom: 40px;
-         clear: both;
-         margin-top: 40px;
+    .header {
+        height:85px;
+        border-bottom:  1px solid #ddd;
+        margin-bottom: 40px;
+        clear: both;
+        margin-top: 40px;
         }
 
-        .menu {
-        padding-top:22px;
-        margin-right: -10px;
-
+    .menu {
+        padding-top:45px;
         }
 
-        .menu ul{
-            float: right;
+    .menu ul{
+        float: right;
         }
 
-        .menu li {
-
-           display: inline;
-           list-style-type: none;
-           padding-right: 12px;
-           font-size: 16px;
+    .menu li {
+		display: inline;
+        list-style-type: none;
+        font-size: 16px;
         }
         
-        .logo a{
-            text-decoration: none;
+    .logo a{
+        text-decoration: none;
         }
 
 /* #Misc
 ================================================== */
-        .title{
-            padding-bottom: 15px;
+    .title{
+        padding-bottom: 15px;
         }	
         
-        .full-width{
-            padding-left: 10px;
+    .full-width{
+        padding-left: 10px;
         } 
         
  /* #Sidebar
 ================================================== */
-        .sidebar{
-            font: 14px/1.5em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            margin-right:-5px;
-                }   
+    .sidebar{
+        font: 14px/1.5em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-right:-5px;
+        }   
                 
-        .sidebar li{
-            list-style: none;
+    .sidebar li{
+        list-style: none;
         }
         
  /* #Footer
 ================================================== */
-
-        .footer li{
-            list-style: none;
-            padding-right: 15px;
-            float: left;
-            width: 220px;
+	.footer li{
+        list-style: none;
+        padding-right: 15px;
+        float: left;
+        width: 220px;
         }

@@ -16,10 +16,9 @@
      </div> 
     
      <div class="nine columns"> 
-         <div class="menu"> <!--  the Menu -->
-          <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-         </div>
-     </div>
+        <!--  the Menu -->
+        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    </div>
     
    </div> <!--  End blog header -->
    
