@@ -4,7 +4,7 @@ Theme URI: https://github.com/wycks/WP-Skeleton-Theme
 Author: Wycks
 Author URI: wpsecure.net
 Description: Responsive Bare Bones framework based on Dave Gamache's getskeleton.com 
-Version: 1.0
+Version: 1.1
 License: http://www.opensource.org/licenses/mit-license.php.
 Tags: Responsive, grid, mobile, framework, bare-bones, white, minimal
 
@@ -26,7 +26,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 ================================================== */
 
     .container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
-    .column, .columns                           { float: left; display: inline;}
+    .column, .columns                           { float: left; display: inline;margin-left: 10px; margin-right: 10px;}
+    /*.column, .columns                           { float: left; display: inline;}*/
     .row                                        { margin-bottom: 20px; }
 
     /* Nested Column Classes */
@@ -74,11 +75,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
         /* WordPress sidebar*/
         .one-third.column{
-          margin-left: 40px;
+          margin-left: 30px;
         }
         
-        /* WordPress menu*/
-        .header .seven.columns {margin-right: 40px;}
 
 /* #Tablet (Portrait)
 ================================================== */
@@ -87,9 +86,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
     @media only screen and (min-width: 768px) and (max-width: 959px) {
         .container                                  { width: 768px; }
-       
+        .container .column,
+        .container .columns                         { margin-left: 10px; margin-right: 10px;  }
         .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
         .column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
+        .alpha.omega                                { margin-left: 0; margin-right: 0; }
 
         .container .one.column                      { width: 28px; }
         .container .two.columns                     { width: 76px; }
@@ -130,7 +131,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         
         /* WordPress sidebar*/
         .one-third.column{
-        margin-left: 20px;
+        margin-left: 30px;
         }
     }
 
@@ -144,7 +145,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
     @media only screen and (max-width: 767px) {
         .container { width: 300px; }
-        .columns, .column { margin: 0; }
+        .container .columns,
+        .container .column { margin: 0; }
 
         .container .one.column,
         .container .two.columns,
@@ -183,11 +185,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .offset-by-fifteen { padding-left: 0; }
         
        /* Float WordPress menu left now, and reduce padding*/
-       .menu ul {float:left;}
-       .menu {padding-top: 20px;}
+      
+       .menu {padding-top: 20px;float: left;}
  
         /* WordPress sidebar*/
-       .one-third.column{margin-left: 0px;}
+       #side{margin-left: 0px;}
     }
 
 
@@ -221,11 +223,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
         
         /* Float WordPress menu left now and reduce padding*/
        
-       .menu ul {float:left;}
-       .menu {padding-top: 20px;}
+       
+       .menu {padding-top: 20px;float: left;}
+
        
         /* WordPress sidebar*/
-       .one-third.column{margin-left: 0px;}
+       #side{margin-left: 0px;}
        
       }
 

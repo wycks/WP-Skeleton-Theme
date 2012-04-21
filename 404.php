@@ -7,7 +7,7 @@
 get_header(); 
 get_template_part( 'menu', 'index' ); //the  menu + logo/site title ?>
 
-	<div class="two-thirds column">
+	<div class="two-thirds column alpha">
 		<div id="content">
 
 			<article id="post-0" class="error404">
@@ -27,7 +27,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title ?>
                                              <ul>
                                              <?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 'TRUE', 'title_li' => '', 'number' => '10' ) ); ?>
                                              </ul>
-					</div>
+				    </div>
 
 					<?php
 					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'WP-Skeleton' ), convert_smilies( ':)' ) ) . '</p>';
@@ -35,6 +35,7 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title ?>
 					?>
 
 				</div><!-- .entry-content -->
+				
 			</article><!-- #post-0 -->
 
 		</div><!-- #content -->

@@ -6,12 +6,11 @@
 ?>
 
 	<div id="comments">
-	<?php if ( post_password_required() ) : ?>
+	 <?php if ( post_password_required() ) : ?>
 		<div class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'WP-Skeleton' ); ?></div>
 	</div><!-- .comments -->
-	<?php return;
-		endif;
-	?>
+
+	<?php return; endif; ?>
 
 	<?php // You can start editing here -- including this comment! ?>
 
@@ -29,6 +28,7 @@
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments') ); ?></div>
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;') ); ?></div>
 		</nav>
+		
 		<?php endif; // check for comment navigation ?>
 
 		<ol class="commentlist">

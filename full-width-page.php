@@ -10,7 +10,7 @@
 get_header(); 
 get_template_part( 'menu', 'index' ); //the  menu + logo/site title ?>
 
-               <div class="sixteen columns  ">
+    <div class="sixteen columns alpha">
 		<div id="primary" class="full-width">
 			<div id="content">
 
@@ -32,7 +32,6 @@ get_template_part( 'menu', 'index' ); //the  menu + logo/site title ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->
-              </div>
+    </div>
                 
-
 <?php get_footer(); ?>

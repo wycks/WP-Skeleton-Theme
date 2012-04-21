@@ -6,19 +6,20 @@
 ?>
   <div class="header">  
     
-     <div class="seven columns"> 
-         <div class="logo">
+    <div class="seven columns alpha"> 
+        <div class="logo">
             <a href="<?php echo home_url(); //make logo a home link?>">
-             <h1><?php echo get_bloginfo('name');?></h1>
-             <h5><?php echo get_bloginfo('description');?></h5>
+            <h1><?php echo get_bloginfo('name');?></h1>
+            <h5><?php echo get_bloginfo('description');?></h5>
             </a>
-         </div>
-     </div> 
+        </div>
+    </div> 
     
-     <div class="nine columns"> 
-        <!--  the Menu -->
-        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    <div class="eleven.columns omega">
+
+    <!--  the Menu -->
+    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+
     </div>
-    
-   </div> <!--  End blog header -->
+</div> <!--  End blog header -->
    
