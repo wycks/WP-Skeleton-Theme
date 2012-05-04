@@ -185,11 +185,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .offset-by-fifteen { padding-left: 0; }
         
        /* Float WordPress menu left now, and reduce padding*/
-      
-       .menu {padding-top: 20px;float: left;}
+        .menu {padding-top: 20px;float: left;}
  
         /* WordPress sidebar*/
-       #side{margin-left: 0px;}
+        #side{margin-left: 0px;}
     }
 
 
@@ -200,7 +199,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
     @media only screen and (min-width: 480px) and (max-width: 767px) {
         .container { width: 420px; }
-        .columns, .column { margin: 0; }
+        .container .columns,
+        .container .column { margin: 0; }
 
         .container .one.column,
         .container .two.columns,
@@ -221,13 +221,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
         .container .one-third.column,
         .container .two-thirds.column { width: 420px; }
         
+
         /* Float WordPress menu left now and reduce padding*/
-       
-       
        .menu {padding-top: 20px;float: left;}
 
-       
-        /* WordPress sidebar*/
+       /* WordPress sidebar*/
        #side{margin-left: 0px;}
        
       }

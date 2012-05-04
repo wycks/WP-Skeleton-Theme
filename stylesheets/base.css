@@ -203,6 +203,7 @@
 		display: inline;
         list-style-type: none;
         font-size: 16px;
+        padding-left: 5px;
         }
         
     .logo a{
