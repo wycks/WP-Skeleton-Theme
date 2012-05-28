@@ -15,7 +15,7 @@
         </div>
     </div> 
     
-    <div class="eleven.columns omega">
+    <div class="eleven columns omega">
 
     <!--  the Menu -->
     <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
