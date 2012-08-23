@@ -39,7 +39,7 @@ add_action('init', 'Wps_remove_header_info');
  remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
  remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
  }
-   add_action('admin_menu','Wps_remove_default_post_metaboxes');
+ add_action('admin_menu','Wps_remove_default_post_metaboxes');
    
  //-----------------------------------------  
 
@@ -53,7 +53,7 @@ add_action('init', 'Wps_remove_header_info');
  remove_meta_box( 'slugdiv','page','normal' ); // Slug Metabox
  remove_meta_box( 'authordiv','page','normal' ); // Author Metabox
  }
-   add_action('admin_menu','Wps_remove_default_page_metaboxes');
+add_action('admin_menu','Wps_remove_default_page_metaboxes');
    
  //-----------------------------------------
    
@@ -62,20 +62,19 @@ add_action('init', 'Wps_remove_header_info');
    function Wps_remove_dashboard_widgets() {
 	global $wp_meta_boxes;
 
-	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
-	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
 
 }
+add_action('wp_dashboard_setup', 'Wps_remove_dashboard_widgets' );
 
-if (!current_user_can('manage_options')) {
-	add_action('wp_dashboard_setup', 'Wps_remove_dashboard_widgets' );
-}
 
 
  //-----------------------------------------
@@ -153,6 +152,28 @@ function complete_version_removal() {
     return '';
 }
 add_filter('the_generator', 'complete_version_removal');
+
+
+// USER Conditionals to wrap functions
+// 
+//  # by user capability
+//  if (!current_user_can('manage_options')) { ..
+//  
+//  ---------------------
+//  
+//  # by username#
+//  
+//  global $wp_meta_boxes;
+//  global $current_user;
+//  get_currentuserinfo();
+//
+//  if($current_user->user_login == 'username'){ ..
+//  
+//  ----------------------
+//  
+//  #if the user is an admin - by user role#
+//  
+//  if ( ! is_admin() ) {..   
 
 
 

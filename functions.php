@@ -48,5 +48,8 @@ add_filter('widget_text', 'do_shortcode');
 
 // add stuff
 //require_once( get_template_directory() . '/snippets/add-stuff.php' );
+//
+//
+
 
 ?>
