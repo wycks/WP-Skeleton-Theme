@@ -20,24 +20,19 @@ add_action('init', 'Wps_remove_header_info');
 
 
 // REMOVE THE WORDPRESS UPDATE NOTIFICATION FOR ALL USERS EXCEPT SYSADMIN
-       global $user_login;
-       get_currentuserinfo();
-       if (!current_user_can('update_plugins')) { // checks to see if current user can update plugins 
-        add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
-        add_filter( 'pre_option_update_core', create_function( '$a', "return null;" ) );
-       }
+//  See http://wordpress.stackexchange.com/questions/67945/how-do-i-disable-dashboard-update-notifications-for-subscribers/67952#67952
        
  //-----------------------------------------
        
 
 // REMOVE META BOXES FROM DEFAULT POSTS SCREEN
-   function Wps_remove_default_post_metaboxes() {
- remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
- remove_meta_box( 'postexcerpt','post','normal' ); // Excerpt Metabox
- remove_meta_box( 'commentstatusdiv','post','normal' ); // Comments Metabox
- remove_meta_box( 'trackbacksdiv','post','normal' ); // Talkback Metabox
- remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
- remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
+ function Wps_remove_default_post_metaboxes() {
+    remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
+    remove_meta_box( 'postexcerpt','post','normal' ); // Excerpt Metabox
+    remove_meta_box( 'commentstatusdiv','post','normal' ); // Comments Metabox
+    remove_meta_box( 'trackbacksdiv','post','normal' ); // Talkback Metabox
+    remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
+    remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
  }
  add_action('admin_menu','Wps_remove_default_post_metaboxes');
    
@@ -45,13 +40,13 @@ add_action('init', 'Wps_remove_header_info');
 
 
 // REMOVE META BOXES FROM DEFAULT PAGES SCREEN
-   function Wps_remove_default_page_metaboxes() {
- remove_meta_box( 'postcustom','page','normal' ); // Custom Fields Metabox
- remove_meta_box( 'postexcerpt','page','normal' ); // Excerpt Metabox
- remove_meta_box( 'commentstatusdiv','page','normal' ); // Comments Metabox
- remove_meta_box( 'trackbacksdiv','page','normal' ); // Talkback Metabox
- remove_meta_box( 'slugdiv','page','normal' ); // Slug Metabox
- remove_meta_box( 'authordiv','page','normal' ); // Author Metabox
+function Wps_remove_default_page_metaboxes() {
+    remove_meta_box( 'postcustom','page','normal' ); // Custom Fields Metabox
+    remove_meta_box( 'postexcerpt','page','normal' ); // Excerpt Metabox
+    remove_meta_box( 'commentstatusdiv','page','normal' ); // Comments Metabox
+    remove_meta_box( 'trackbacksdiv','page','normal' ); // Talkback Metabox
+    remove_meta_box( 'slugdiv','page','normal' ); // Slug Metabox
+    remove_meta_box( 'authordiv','page','normal' ); // Author Metabox
  }
 add_action('admin_menu','Wps_remove_default_page_metaboxes');
    
@@ -66,9 +61,8 @@ add_action('admin_menu','Wps_remove_default_page_metaboxes');
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
-
-    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-    unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
+        unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+        unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
 
