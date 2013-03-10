@@ -3,8 +3,6 @@
 
 This is a very minimal Bare Bones Responsive WordPress theme based on getskeleton.com
 
-I have added a demo: http://wp-skeleton.aws.af.cm
-
 ### Features:
 
 * Very Easy to customise, it's basically a blank theme.
@@ -64,4 +62,4 @@ To have a left sidebar just move `get_template_part( 'sidebar', 'index' );` to a
 More grid layout and examples on http://www.getskeleton.com/
 
 -------------------------------
-### Open to any feature requests 
+The demo sites keep going down because PHP Cloud based App sites suck..sorry
