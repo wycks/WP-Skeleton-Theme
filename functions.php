@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @package WordPress
  * @subpackage WP-Skeleton
@@ -7,20 +7,19 @@
 // drag and drop menu support
 register_nav_menu( 'primary', 'Primary Menu' );
 
-
 //widget support for a right sidebar
-register_sidebar(array(
+register_sidebar( array(
   'name' => 'Right SideBar',
   'id' => 'right-sidebar',
   'description' => 'Widgets in this area will be shown on the right-hand side.',
   'before_widget' => '<div id="%1$s">',
-  'after_widget'  => '</div>',  
+  'after_widget'  => '</div>',
   'before_title' => '<h3>',
   'after_title' => '</h3>'
 ));
 
 //widget support for the footer
-register_sidebar(array(
+register_sidebar( array(
   'name' => 'Footer SideBar',
   'id' => 'footer-sidebar',
   'description' => 'Widgets in this area will be shown in the footer.',
@@ -33,23 +32,19 @@ register_sidebar(array(
 //This theme uses post thumbnails
 add_theme_support( 'post-thumbnails' );
 
-
 //Apply do_shortcode() to widgets so that shortcodes will be executed in widgets
-add_filter('widget_text', 'do_shortcode');
+add_filter( 'widget_text', 'do_shortcode' );
 
+//Enqueue_styles
+function load_all() {
 
-/**
- * MANAGE REMOVING OR ADDING STUFF (aka Function Snippets)
- * comment in or out what you want
- */
+  wp_register_style( 'skeleton-style', get_template_directory_uri() . '/style.css');
+  wp_register_style( 'skeleton-base', get_template_directory_uri() . '/stylesheets/base.css');
+  wp_register_style( 'skeleton-layout', get_template_directory_uri() . '/stylesheets/layout.css');
 
-// remove stuff,  uncomment to enable
-//require_once( get_template_directory() . '/snippets/remove-stuff.php' );
+  wp_enqueue_style( 'skeleton-style' );
+  wp_enqueue_style( 'skeleton-base' );
+  wp_enqueue_style( 'skeleton-layout' );
 
-// add stuff
-//require_once( get_template_directory() . '/snippets/add-stuff.php' );
-//
-//
-
-
-?>
+}
+add_action('wp_enqueue_scripts', 'load_all');
