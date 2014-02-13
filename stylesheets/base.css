@@ -21,7 +21,7 @@
 	#Tabs
 	#Forms
         #Menu + Logo
-	#Misc 
+	#Misc
         #Sidebar
         #Footer
 */
@@ -122,6 +122,11 @@
 /* #Images
 ================================================== */
 
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
 	img.scale-with-grid {
 		max-width: 100%;
 		height: auto; }
@@ -180,9 +185,9 @@
 		font-weight: normal;
 		font-size: 13px;
 		color: #444; }
-        
+
 /* #Menu & Logo
-================================================== */        
+================================================== */
     .header {
         height:85px;
         border-bottom:  1px solid #ddd;
@@ -202,7 +207,7 @@
         font-size: 16px;
         padding-left: 5px;
         }
-        
+
     .logo a{
         text-decoration: none;
         }
@@ -211,23 +216,23 @@
 ================================================== */
     .title{
         padding-bottom: 15px;
-        }	
-        
+        }
+
     .full-width{
         padding-left: 10px;
-        } 
-        
+        }
+
  /* #Sidebar
 ================================================== */
     .sidebar{
         font: 14px/1.5em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      
-        }   
-                
+
+        }
+
     .sidebar li{
         list-style: none;
         }
-        
+
  /* #Footer
 ================================================== */
 	.footer li{
