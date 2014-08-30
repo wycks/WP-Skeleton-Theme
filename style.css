@@ -30,10 +30,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
     /*.column, .columns                           { float: left; display: inline;}*/
     .row                                        { margin-bottom: 20px; }
 
-    /* Nested Column Classes */
-    .column.alpha, .columns.alpha               { margin-left: 0; }
-    .column.omega, .columns.omega               { margin-right: 0; }
-
     /* Base Grid */
     .container .one.column                      { width: 40px;  }
     .container .two.columns                     { width: 100px; }
@@ -72,11 +68,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
     .container .offset-by-fourteen              { padding-left: 840px; }
     .container .offset-by-fifteen               { padding-left: 900px; }
 
-
+    /* Nested Column Classes */
+    .column.alpha, .columns.alpha               { margin-left: 0; }
+    .column.omega, .columns.omega               { margin-right: 0; }
+	
         /* WordPress sidebar*/
-        .one-third.column{
-          margin-left: 30px;
-        }
+       #side .one-third.column{ margin-left: 30px; }
         
 
 /* #Tablet (Portrait)
